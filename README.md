@@ -1,17 +1,45 @@
-# React + Vite
+# Fútbol y Barrio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Landing page documental e interactiva sobre la memoria, el humor y la mística del fútbol de barrio en Arica.
 
-Currently, two official plugins are available:
+## Stack
+- Next.js (App Router) + React 19
+- TypeScript en modo estricto
+- Server Actions + Nodemailer (envío de testimonios)
+- CSS propio, iconos con `lucide-react`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Scripts
+```bash
+npm install
+npm run dev        # desarrollo en http://localhost:3000
+npm run build      # build de producción
+npm run start      # servir el build
+npm run typecheck  # tsc --noEmit
+npm run lint       # oxlint
+```
 
-## React Compiler
+## Variables de entorno
+Copia `.env.example` a `.env.local` y completa:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Variable | Descripción |
+|---|---|
+| `GMAIL_USER` | Cuenta Gmail que envía los correos |
+| `GMAIL_APP_PASSWORD` | Contraseña de aplicación de esa cuenta (no la clave normal) |
+| `TESTIMONIOS_TO` | Destino (por defecto `rivasvaras.multimedia@gmail.com`) |
 
-## Expanding the Oxlint configuration
+## Estructura
+```
+src/
+  app/                 layout, page y estilos globales
+  actions/             Server Actions (testimonial.ts)
+  components/
+    sections/          Hero, Stories, Trailer, Chapters, Dossier, Stats, Contact, Footer, Navbar
+    ui/                GrassButton, VideoPlayer, PdfViewer
+  lib/                 content.ts (datos) y validation.ts (validación compartida cliente/servidor)
+public/                videos, PDF, fuentes, logos e imágenes
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-# FutbolyBarrio
+## Pendiente
+- Segundo teaser real (hoy ambos teasers apuntan a `hero-video.webm`) y videos reales por capítulo.
+- Adaptar la paleta a la definida en `AGENTS.md`.
+- Poster del trailer (`public/hero.png`).
