@@ -14,7 +14,7 @@ export interface Teaser {
 }
 
 export const TEASERS: readonly Teaser[] = [
-  { id: 'teaser-1', label: 'Teaser 1: El Potrero', src: '/hero-video.webm', duration: '02:45 min' },
+  { id: 'teaser-1', label: 'Teaser 1: El Potrero', src: '/trailer.mp4', duration: '02:14 min' },
   { id: 'teaser-2', label: 'Teaser 2: La Hinchada', src: '/hero-video.webm', duration: '02:45 min' },
 ]
 

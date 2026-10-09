@@ -13,10 +13,10 @@ export default function Dossier() {
       </div>
 
       <PdfViewer
-        src="/doc.pdf"
-        title="Documento Cultural Fútbol y Barrio"
-        sizeLabel="Formato PDF — 570 KB"
-        downloadName="Futbol_y_Barrio_Documento.pdf"
+        src="/documento_investigacion.pdf"
+        title="Documento de Investigación Fútbol y Barrio"
+        sizeLabel="Formato PDF — 42 KB"
+        downloadName="Futbol_y_Barrio_Documento_Investigacion.pdf"
       />
     </section>
   )

@@ -30,3 +30,7 @@ next-env.d.ts
 *.tsbuildinfo
 .env
 
+
+# Large media files
+public/trailer.mp4
+public/trailer.webm
