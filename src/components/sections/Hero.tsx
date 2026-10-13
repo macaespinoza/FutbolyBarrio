@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 export default function Hero() {
   return (
     <section className="hero-container">
-      <video autoPlay loop muted playsInline preload="auto" className="hero-video-bg" src="/hero-video.webm" />
+      <video autoPlay loop muted playsInline preload="auto" className="hero-video-bg" src="/loop-web.webm" />
       <div className="hero-overlay" />
 
       <Navbar />

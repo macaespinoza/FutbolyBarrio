@@ -18,7 +18,10 @@ export default function Chapters() {
                 {chapter.number}
               </span>
               <div className="chapter-body">
-                <h3 className="chapter-title">{chapter.title}</h3>
+                <div className="chapter-header-row">
+                  <h3 className="chapter-title">{chapter.title}</h3>
+                  <span className="chapter-tag">Próximamente</span>
+                </div>
                 <p className="chapter-desc">{chapter.desc}</p>
               </div>
             </li>
