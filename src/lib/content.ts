@@ -5,26 +5,39 @@ export const NAV_ITEMS = [
   { href: '#contacto', label: 'Testimonios' },
 ] as const
 
+export interface TeaserSources {
+  '1080p'?: string
+  '720p'?: string
+  '480p'?: string
+}
+
 export interface Teaser {
   id: string
   label: string
   src: string
+  sources?: TeaserSources
   poster?: string
   duration: string
 }
 
-export const TEASERS: readonly Teaser[] = [
-  { id: 'teaser-1', label: 'Teaser 1: El Potrero', src: '/trailer.mp4', duration: '02:14 min' },
-  { id: 'teaser-2', label: 'Teaser 2: La Hinchada', src: '/hero-video.webm', duration: '02:45 min' },
-]
+export const TRAILER: Teaser = {
+  id: 'trailer-oficial',
+  label: 'Teaser Trailer de Fútbol y Barrio',
+  src: '/trailer.webm',
+  sources: {
+    '1080p': '/trailer.webm',
+    '720p': '/trailer-720p.webm',
+    '480p': '/trailer-480p.webm',
+  },
+  poster: '/cover-trailer.webp',
+  duration: '02:14 min',
+}
 
 export interface Chapter {
   id: number
   number: string
   title: string
-  tag: string
   desc: string
-  status: 'production' | 'upcoming'
 }
 
 export const CHAPTERS: readonly Chapter[] = [
@@ -32,46 +45,33 @@ export const CHAPTERS: readonly Chapter[] = [
     id: 1,
     number: '01',
     title: 'Familia y fútbol: el núcleo que sostiene a los clubes',
-    tag: 'En producción',
     desc: 'Generaciones enteras en las gradas: el rol vital de las familias que cosen camisetas, alientan cada fin de semana y mantienen viva la identidad de cada equipo.',
-    status: 'production',
   },
   {
     id: 2,
     number: '02',
     title: 'La Cancha del Morro: el templo de la tradición barrial',
-    tag: 'En producción',
     desc: 'Tierra, viento y memoria viva. Historias y testimonios de un espacio emblemático de Arica que ha visto nacer leyendas y tardes imborrables.',
-    status: 'production',
   },
   {
     id: 3,
     number: '03',
     title: 'La hinchada: pasión y lealtad por la población',
-    tag: 'En producción',
     desc: 'Acá se alienta al vecino y al amigo de la infancia. La mística de una fiesta comunitaria donde ganar es secundario frente al orgullo de pertenecer.',
-    status: 'production',
   },
   {
     id: 4,
     number: '04',
     title: 'Asociación El Morro: la orgánica del torneo amateur',
-    tag: 'En producción',
     desc: 'Dirigentes vecinales, autogestión y compromiso cívico detrás de uno de los campeonatos barriales más antiguos y convocantes de la ciudad.',
-    status: 'production',
   },
   {
     id: 5,
     number: '05',
     title: 'Los jugadores: pasión pura por la camiseta',
-    tag: 'En producción',
     desc: 'Acá no hay contratos ni sueldos: se paga por jugar. La previa, el sudor y el orgullo de defender los colores del barrio durante los noventa minutos.',
-    status: 'production',
   },
 ]
-
-export const FUTURE_CHAPTERS = CHAPTERS
-export type FutureChapter = Chapter
 
 export interface GalleryPhoto {
   id: number

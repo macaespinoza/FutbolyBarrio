@@ -95,7 +95,7 @@ export default function Navbar() {
       </a>
 
       <ul className="nav-links" ref={navRef} onMouseLeave={() => setHoveredIndex(null)}>
-        <div
+        <li
           className="nav-ball-indicator"
           style={{
             transform: `translate3d(${ballState.x}px, ${ballState.y}px, 0) scale(${ballState.scale})`,
@@ -110,7 +110,7 @@ export default function Navbar() {
             className="nav-ball-img"
             style={{ transform: `rotate(${ballState.rotation}deg)` }}
           />
-        </div>
+        </li>
 
         {NAV_ITEMS.map((item, index) => {
           const isActive = activeSection === item.href
@@ -131,7 +131,6 @@ export default function Navbar() {
           )
         })}
       </ul>
-      <div className="nav-spacer" aria-hidden="true" />
     </header>
   )
 }
