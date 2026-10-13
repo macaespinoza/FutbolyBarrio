@@ -76,7 +76,7 @@ function ContactBody({ onReset }: { onReset: () => void }) {
                     id="nombre"
                     name="nombre"
                     required
-                    placeholder="Ej. Carlos Mamani"
+                    placeholder="Ej. Juan Pérez"
                     className="form-input"
                     aria-invalid={!!errors.nombre}
                   />
