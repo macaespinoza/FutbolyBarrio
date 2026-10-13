@@ -38,13 +38,23 @@ export default function Gallery() {
     return () => clearInterval(timer)
   }, [isPlaying, handleNext])
 
-  // Scroll active thumbnail into view
+  const isFirstRender = useRef(true)
+
+  // Scroll active thumbnail horizontally inside its container only (sin mover la ventana)
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+
     if (activeThumbRef.current && filmstripRef.current) {
-      activeThumbRef.current.scrollIntoView({
+      const container = filmstripRef.current
+      const thumb = activeThumbRef.current
+      const scrollLeft = thumb.offsetLeft - container.clientWidth / 2 + thumb.clientWidth / 2
+
+      container.scrollTo({
+        left: scrollLeft,
         behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center',
       })
     }
   }, [currentIndex])
